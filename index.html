@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Memory Web Game</title>
+    <style>
+      .grid-selection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .timer-div {
+        font-size: 1.2rem;
+        color: #fff;
+        padding: 0.3rem 0.6rem;
+        border-radius: 8px;
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-top: 1rem;
+        text-align: center;
+        width: 60px;
+      }
+
+      #startGameButton,
+      #resetGameButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(97, 95, 215);
+        border: 2px solid rgb(97, 95, 215);
+        border-radius: 0.5rem;
+        color: white;
+        padding: 0.6rem;
+        margin: 0.6rem;
+        cursor: pointer;
+      }
+
+      #resetGameButton:hover {
+        background-color: rgb(184, 49, 49);
+        border: 2px solid rgb(194, 0, 0);
+      }
+
+      #startGameButton:hover {
+        background-color: rgb(57, 164, 28);
+        border: 2px solid rgb(34, 117, 11);
+      }
+
+      .buttons,
+      .features {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-content">
+      <div class="heading">
+        <h1>Memory Web App Game</h1>
+      </div>
+      <div class="features">
+        <div class="timer-div" id="timerDiv" style="display: none">0:00</div>
+        <div class="flip-count" id="flipCountDiv" style="display: none">
+          Flips: 0
+        </div>
+        <div class="grid-selection">
+          <label for="gridSize">Grid Size:</label>
+          <select id="gridSize">
+            <option value="2x2">2x2</option>
+            <option value="2x3">2x3</option>
+            <option value="2x4">2x4</option>
+            <option value="2x5">2x5</option>
+            <option value="3x4">3x4</option>
+          </select>
+          <button id="startGameButton">Start Game</button>
+        </div>
+      </div>
+      <div id="messageDiv"></div>
+      <section style="display: none"></section>
+    </div>
+
+    <script src="dist/main.js" type="module" defer></script>
+  </body>
+</html>
