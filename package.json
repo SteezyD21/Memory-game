@@ -1,0 +1,17 @@
+{
+  "name": "douglas-aphane-222-memory-game-in-vanilla-js-javascript",
+  "version": "1.0.0",
+  "description": "Memory game web app (222) For raw project instructions see: http://syllabus.africacode.net/projects/memory-game/part-1/",
+  "main": "src/memory_game.js",
+  "scripts": {
+    "test": "jasmine",
+    "build": "browserify src/memory_game.js -o dist/main.js"
+  },
+  "author": "Douglas Aphane",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "jasmine": "^5.1.0",
+    "jsdom": "^24.1.1"
+  }
+}
