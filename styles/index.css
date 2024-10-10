@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #407a41;
+  color: white;
+}
+
+body {
+  background-image: url("../assets/background_image.png");
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 90%;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 2.5em;
+  color: rgb(97, 95, 215);
+  margin-bottom: 1rem;
+}
+
+section {
+  display: grid;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  perspective: 50rem;
+}
+
+.card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0);
+  background-color: #fff;
+  display: flex;
+}
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  pointer-events: none;
+}
+
+.front {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.back {
+  background-color: rgba(214, 214, 214, 0.989);
+  position: absolute;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.matched {
+  border: 4px solid rgb(34, 117, 11);
+}
+
+.lockedFlip {
+  transform: rotateY(180deg);
+}
+
+.flippedCards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(71, 3, 144);
+  border-radius: 0.5rem;
+  margin: 0.6rem;
+  padding: 0.6rem;
+  background-color: rgb(71, 3, 144);
+  color: white;
+}
+
+.flip-count {
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
+  margin-left: 0.8rem;
+  text-align: center;
+  width: 80px;
+}
+
+#messageDiv {
+  position: fixed;
+  top: 60%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgb(7, 6, 89);
+  border: 2px solid rgb(7, 6, 89);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 1000;
+  display: none;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#startGameButton,
+#resetGameButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(97, 95, 215);
+  border: 2px solid rgb(97, 95, 215);
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.6rem;
+  margin: 0.6rem;
+  cursor: pointer;
+}
+
+#resetGameButton:hover {
+  background-color: rgb(184, 49, 49);
+  border: 2px solid rgb(194, 0, 0);
+}
+
+#startGameButton:hover {
+  background-color: rgb(57, 164, 28);
+  border: 2px solid rgb(34, 117, 11);
+}
+
+.buttons,
+.features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  #messageDiv {
+    top: 60%;  
+    font-size: 1.2em;  
+    padding: 0.8rem;  
+  }
+
+  .body-content {
+    padding: 2rem !important;
+    max-width: 100% !important;
+  }
+  section {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+  }
+  .card {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .body-content {
+    padding: 1.5rem !important;
+    max-width: 100% !important;
+  }
+  section {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    grid-gap: 0.5rem !important;
+  }
+  .card {
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0.5rem !important;
+  }
+  h1 {
+    font-size: 2em !important;
+  }
+}
+
+@media (max-width: 414px) {
+
+  #messageDiv {
+    top: 60%;  
+    font-size: 1em;  
+    padding: 0.6rem;  
+  }
+  .body-content {
+    padding: 1rem !important;
+    max-width: 100% !important;
+    margin: 1rem !important;
+    position: relative !important;
+  }
+
+  section {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)) !important;
+    grid-gap: 0.25rem !important;
+  }
+  .card {
+    width: auto !important;
+    height: auto !important;
+    margin-bottom: 0.25rem !important;
+  }
+  h1 {
+    font-size: 1.5em !important;
+  }
+  #startGameButton,
+  #resetGameButton {
+    font-size: 1rem !important;
+    padding: 0.5rem !important;
+  }
+}
